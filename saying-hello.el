@@ -4,7 +4,9 @@
   (message text))
 
 (defun sh--format-hello (name)
-  (concat "Hello, " name ", nice to meet you!"))
+  (cond
+    ((equal name "Elvis") "Hello, Elvis… aren't you supposed to be dead?")
+    (:otherwise (concat "Hello, " name ", nice to meet you!"))))
 
 (defun sh--ask-name ()
   (read-string "What is your name? "))
